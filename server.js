@@ -11,8 +11,10 @@ var app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(express.static(path.join(__dirname, 'dist/isentia-client-angular')));
 app.use('/', express.static(path.join(__dirname, 'dist/isentia-client-angular')));
+app.use('/demo', express.static(path.join(__dirname, 'demo.html')));
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
