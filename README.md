@@ -74,10 +74,12 @@ Depending on the project, I typically have stagered design + development sprints
 | Design      | `Plan > UX > UI > Backlog` | 
 | Development | `Plan > User Stories > Test > Code > Deploy ` | 
 
+<!-- 
 | SCRUM | Time | Phase Description |
 | ------| ---- | ----------------- | 
 | `Plan` | 4 hours | Refine and reorder `product backlog`  and `planning poker` | 
-| `Plan` | Refine and reorder `product backlog`  and `planning poker` | 
+| `Plan` | Refine and reorder `product backlog`  and `planning poker` |  
+-->
 
 | User Story | Lifecycle |
 | --------- | ------- | 
@@ -175,41 +177,105 @@ A `User Story` as issues
 | `Components` | *DI <br> *Elements on Dom <br> * HTML for Mock Model <br> *Inputs() <br> *Outputs() <br> *Events triggered <br> *Events received <br> *Test for state: loading, success, warning, error <br> *Test lifecycle hooks <br> * BackstopJs CSS tests for responsive |
 | `Models` | * DI <br>  *Key /values set <br> * JSON Schema validation |
 | `Services` | * DI <br> * Observable subscribe <br> * Get set <br> * Integration test for API |
+<!-- 
 #| `` |  |
 #| `` |  |
 #| `` |  |
+ -->
 
 # Components 
 `As a user, I want a Flickr list page`  
+* Flickr List component
+* Flickr Tile component
 
-###### BDD - Unit Tests
+###### BDD/TDD - Flickr List component
 ```
 * should create the page
-* should show the mock images 
+* should show tiles for mock FlickrImages models 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop
+```
+
+###### BDD/TDD - Flickr Tile component
+``` 
+* should be created 
+* should show loading gif 
+* should show mock image 
+* should show mock title 
+* should hide the authour by deafult  
+* should show authour on hover 
+* should open the flickr details page on click 
+* should have favourite button 
+* favourite button should be off by default 
+* favourite button should be on when Flickr Image model is saved 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop
 ```
 
 `As a user, I want a Flickr details page` 
+* Flickr details component
 
-###### BDD - Unit Tests
+
+###### BDD/TDD - Flickr details component
 ```
-* 
-* 
+* should be created 
+* should show Image 
+* should show title 
+* should show authour 
+* should show description 
+* should show back button 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop
 ```
 
 `As a user, I want a search page` 
 
-###### BDD - Unit Tests
+###### BDD/TDD - Search Page 
 ```
-* 
-* 
+* should be created 
+* should have search bar 
+* should have no search tiles by default 
+* should show loading 
+* should show mock tiles for search term "mock" 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop
 ```
 
 `As a user, I want a simple sidebar` 
 
-###### BDD - Unit Tests
+###### BDD/TDD - Unit Tests
 ```
-* 
-* 
+* should be created 
+* should have menu item for All Images
+* should have menu item for Favourites
+* should have menu item for Search 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop
 ```
 
 
