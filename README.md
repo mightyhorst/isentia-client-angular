@@ -20,6 +20,7 @@ Please raise a `pull request` for any developments, and use the `issues` for iss
 
 <!-- ![Architecture](https://mitni455.github.io/isentia-client-angular/images/architecture.png) -->
 ![Architecture](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/architecture.png)
+This includes the backend at this [repo](https://github.com/mitni455/isentia_microservice_flickr) 
 
 | Application | Description |
 | -------- | ----------- |
@@ -51,8 +52,9 @@ Please raise a `pull request` for any developments, and use the `issues` for iss
 <!-- ![cicd](https://mitni455.github.io/isentia-client-angular/images/ci_cd.png) -->
 <!-- ![cicd](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd.png) -->
 ![ci/cd client](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_angular.png)
+and for the backend at this [repo](https://github.com/mitni455/isentia_microservice_flickr) 
 ![ci/cd backend](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_backend.png)
-This is for the backend on this [repo](https://github.com/mitni455/isentia_microservice_flickr) 
+
 
 
 
