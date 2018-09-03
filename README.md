@@ -6,7 +6,7 @@
 # Screenshots
 ##### Search Page 
 Search by Tag 
-![Search Page Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_tags.png)
+![Search Page Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_tags2.png)
 
 ##### Favourites Page 
 Save your favourites to a pin board
