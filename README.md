@@ -3,6 +3,23 @@
 * [Code Docs](https://mitni455.github.io/isentia-client-angular/overview.html)
 * [Backend repo](https://github.com/mitni455/isentia_microservice_flickr)
 
+# Screenshots
+##### Search Page 
+Search by Tag 
+[Search Page Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot1.png)
+
+##### Favourites Page 
+Save your favourites to a pin board
+[Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot2.png)
+
+##### Details Page 
+This is far from finished, it should show the authour details too
+[Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot4.png)
+
+##### Public Flikr Feed Page 
+Browse the public feed for inspiration
+[Public Flikr Feed Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot3.png)
+
 # Quick Start 
 Install and run 
 1. Clone: `git clone https://github.com/mitni455/isentia-client-angular.git`
@@ -13,7 +30,7 @@ Install and run
 * `ng e2e`
 4. Serve locally: `ng serve`
 
-Please raise a `pull request` for any developments, and use the `issues` for issues and feature requests. 
+Please raise a `pull request` for any developments, and use the `issues` for bugs and feature requests. Be sure to run `compodoc` to generate docs.
 
 
 # Architecture 
@@ -88,14 +105,16 @@ Depending on the project, I typically have stagered design + development sprints
 <!-- 
 | SCRUM | Time | Phase Description |
 | ------| ---- | ----------------- | 
-| `Plan` | 4 hours | Refine and reorder `product backlog`  and `planning poker` | 
-| `Plan` | Refine and reorder `product backlog`  and `planning poker` |  
+| `Plan` | 4 hours | Refine and reorder `product backlog`  and `planning poker` |  
+| `Standup` | 20 mins | Refine and reorder `product backlog`  and `planning poker` |  
+| `Review` | 1 hour | Refine and reorder `product backlog`  and `planning poker` |  
+| `Retrospective` | 30 mins | Refine and reorder `product backlog`  and `planning poker` |  
 -->
 
 | User Story | Lifecycle |
 | --------- | ------- | 
 | `User Story` | Create `issue` for each `user story` | 
-| `UX + UI` | If no Design phase, create wireframes and PSD/Sketch designs if applicable  | 
+| `UX + UI` | If no `design phase`, create wireframes and PSD/Sketch designs if applicable  | 
 | `Failing Test` | Design e2e test and unit test that fail | 
 | `Code` | Create new `branch` for each user story.  | 
 | `Passing Test` | Write code to pass tests | 
