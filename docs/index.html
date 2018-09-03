@@ -33,8 +33,450 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="isentiaclientangular">IsentiaClientAngular</h1>
-<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 6.1.5.</p>
+<h1 id="quick-links">Quick Links</h1>
+<ul>
+<li><a href="">Online Demo</a></li>
+<li><a href="https://mitni455.github.io/isentia-client-angular/overview.html">Code Docs</a></li>
+<li><a href="https://github.com/mitni455/isentia_microservice_flickr">Backend repo</a></li>
+</ul>
+<h1 id="screenshots">Screenshots</h1>
+<h5 id="search-page">Search Page</h5>
+<p>Search by Tag 
+<img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_tags2.png" alt="Search Page Screenshot" class="img-responsive"></p>
+<h5 id="favourites-page">Favourites Page</h5>
+<p>Save your favourites to a pin board
+<img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_favs.png" alt="Favourites Screenshot" class="img-responsive"></p>
+<h5 id="details-page">Details Page</h5>
+<p>This is far from finished, it should show the authour details too
+<img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_details3.png" alt="Favourites Screenshot" class="img-responsive"></p>
+<h5 id="public-flikr-feed-page">Public Flikr Feed Page</h5>
+<p>Browse the public feed for inspiration
+<img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot3.png" alt="Public Flikr Feed Screenshot" class="img-responsive"></p>
+<h1 id="quick-start">Quick Start</h1>
+<p>Install and run </p>
+<ol>
+<li>Clone: <code>git clone https://github.com/mitni455/isentia-client-angular.git</code></li>
+<li>Install dependencies: <code>npm i</code></li>
+<li>Run tests </li>
+<li>Install the CLI (if not installed) <code>npm i -g @angular/cli</code> </li>
+<li><code>ng test</code></li>
+<li><code>ng e2e</code></li>
+<li>Serve locally: <code>ng serve</code></li>
+</ol>
+<p>Please raise a <code>pull request</code> for any developments, and use the <code>issues</code> for bugs and feature requests. Be sure to run <code>compodoc</code> to generate docs.</p>
+<h1 id="architecture">Architecture</h1>
+<!-- ![Architecture](https://mitni455.github.io/isentia-client-angular/images/architecture.png) -->
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/architecture.png" alt="Architecture" class="img-responsive"></p>
+<p>Also pictured is the backend architecture, available at this <a href="https://github.com/mitni455/isentia_microservice_flickr">repo</a> </p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Application</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Angular6</code></td>
+<td><em>Angular6</em> is used as the simple SPA framework.</td>
+</tr>
+<tr>
+<td><code>ExpressJs</code></td>
+<td>The app is served by <em>ExpressJs</em>. We could also use this as a simple resourceful API too, however we have chosen to use microservices on <em>Lambda</em></td>
+</tr>
+<tr>
+<td><code>Docker</code></td>
+<td><em>Docker</em> is probably overkill here, but is used as a simple container to quickly setup the Angular/Express app on all environments (dev/test/staging)</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Platform</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Beanstalk</code></td>
+<td>Angular App is served using <em>ExpressJs</em> inside a <em>Docker</em> container</td>
+</tr>
+<tr>
+<td><code>AWS Gateway</code></td>
+<td>The Angular App calls the AWS Gateway</td>
+</tr>
+<tr>
+<td><code>Lambda</code></td>
+<td>A serveless microservice for handling Flickr and user management</td>
+</tr>
+<tr>
+<td><code>Cognito</code></td>
+<td><em>not used</em> Used for User IAM and AAA</td>
+</tr>
+<tr>
+<td><code>DynamoDb</code></td>
+<td>Used for saving user favourites.</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Tools</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Travis CI</code></td>
+<td>Continuous Integration and Deployment</td>
+</tr>
+<tr>
+<td><code>CompoDoc</code></td>
+<td>Documentation</td>
+</tr>
+<tr>
+<td><code>Agile</code></td>
+<td>Github Projects</td>
+</tr>
+<tr>
+<td><a href="https://garris.github.io/BackstopJS/"><code>BackstopJS 3</code></a></td>
+<td>Visual regression testing for responsive CSS</td>
+</tr>
+<tr>
+<td><code>Mocha</code></td>
+<td>Integration and API Testing (used for backend repo. I prefer it to Jasmine/Karma)</td>
+</tr>
+<tr>
+<td><code>Jasmine + Karma</code></td>
+<td>Built in ng unit testing</td>
+</tr>
+<tr>
+<td><code>Protractor</code></td>
+<td>Built in ng e2e testing with PhantomJs and Chrome Web Driver</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ci-cd">CI/CD</h1>
+<!-- ![cicd](https://mitni455.github.io/isentia-client-angular/images/ci_cd.png) -->
+<!-- ![cicd](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd.png) -->
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_angular.png" alt="ci/cd client" class="img-responsive"></p>
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_backend.png" alt="ci/cd backend" class="img-responsive"></p>
+<p>Also pictured is the backend architecture, available at this <a href="https://github.com/mitni455/isentia_microservice_flickr">repo</a> </p>
+<h3 id="environments">Environments</h3>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Environment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Test</code></td>
+<td>Because this is AWS we need to deploy to a test environment online before we can run the integration tests. If these pass then the <em>master</em> branch will be deployed to the staging environment.</td>
+</tr>
+<tr>
+<td><code>Staging</code></td>
+<td>The <em>master</em> branch will be deployed to the <em>staging</em> environment after all tests pass on the <em>test</em> environment.</td>
+</tr>
+<tr>
+<td><code>Production</code></td>
+<td>The <em>production</em> branch will be deployed to the <em>production</em> environment after all tests pass on the <em>test</em> environment. This is not setup for our simple example</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pipeline">Pipeline</h3>
+<p><em>TravisCi</em> is used as our Continuous Integration service. </p>
+<h1 id="development-lifecycle">Development Lifecycle</h1>
+<p>Depending on the client tradeoffs between time, cost and quality I would follow the following development lifecycle including agile approach, extreme programming and BDD. </p>
+<!-- ![Architecture](https://mitni455.github.io/isentia-client-angular/images/dev-lifecycle.png) -->
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/dev-lifecycle.png" alt="Architecture" class="img-responsive"></p>
+<p>Depending on the project, I typically have stagered design + development sprints </p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Sprint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design</td>
+<td><code>Plan &gt; UX &gt; UI &gt; Backlog</code></td>
+</tr>
+<tr>
+<td>Development</td>
+<td><code>Plan &gt; User Stories &gt; Test &gt; Code &gt; Deploy</code></td>
+</tr>
+</tbody>
+</table>
+<!-- 
+| SCRUM | Time | Phase Description |
+| ------| ---- | ----------------- | 
+| `Plan` | 4 hours | Refine and reorder `product backlog`  and `planning poker` |  
+| `Standup` | 20 mins | Refine and reorder `product backlog`  and `planning poker` |  
+| `Review` | 1 hour | Refine and reorder `product backlog`  and `planning poker` |  
+| `Retrospective` | 30 mins | Refine and reorder `product backlog`  and `planning poker` |  
+-->
+
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>User Story</th>
+<th>Lifecycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>User Story</code></td>
+<td>Create <code>issue</code> for each <code>user story</code></td>
+</tr>
+<tr>
+<td><code>UX + UI</code></td>
+<td>If no <code>design phase</code>, create wireframes and PSD/Sketch designs if applicable</td>
+</tr>
+<tr>
+<td><code>Failing Test</code></td>
+<td>Design e2e test and unit test that fail</td>
+</tr>
+<tr>
+<td><code>Code</code></td>
+<td>Create new <code>branch</code> for each user story.</td>
+</tr>
+<tr>
+<td><code>Passing Test</code></td>
+<td>Write code to pass tests</td>
+</tr>
+<tr>
+<td><code>Commit</code></td>
+<td>Refactor to pass all tests and <code>pull request</code> for merge to <code>master</code> branch</td>
+</tr>
+<tr>
+<td><code>Test Env</code></td>
+<td>Push to test environment</td>
+</tr>
+<tr>
+<td><code>Staging</code></td>
+<td>If tests pass, push to staging</td>
+</tr>
+<tr>
+<td><code>Review</code></td>
+<td>Business owner to review then push to <code>production</code> branch</td>
+</tr>
+<tr>
+<td><code>Production</code></td>
+<td>If passes tests, push to production</td>
+</tr>
+<tr>
+<td><code>Retrospective</code></td>
+<td>Collect feedback for sprint retrospective or add to product backlog</td>
+</tr>
+</tbody>
+</table>
+<h3 id="plan">Plan</h3>
+<p>We will use <em>SCRUM</em> as our agile methodology. Before the <em>sprint</em> starts we need to source the Product Backlog from the Business Owner and the roles we will be serving as our customer. </p>
+<p>We will use Trello, Jira or Github Projects as our agile tool. </p>
+<p>The <em>roles</em> are simple, we have one user. Optionally, it is typically helpful and improves enaggement with the client or business owner to source a <em>persona</em> for our roles rather than just saying &quot;user&quot; in our stories. This helps us focus on delivering value for the customer. </p>
+<p>e.g. <em>Kayla as &quot;User&quot;</em></p>
+<!-- ![Example Persona](https://mitni455.github.io/isentia-client-angular/images/persona.jpg) -->
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/persona.jpg" alt="Example Persona" class="img-responsive"></p>
+<p>The <em>epics</em> for this sprint include: </p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>ID</th>
+<th>Epic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Epic 1:</code></td>
+<td>As a user, I want to view the public feed from Flickr, so that I can save my favourites</td>
+</tr>
+<tr>
+<td><code>Epic 2:</code></td>
+<td>As a user, I want to search for topics from the flickr feed, so that I can save time looking for topics I like</td>
+</tr>
+<tr>
+<td><code>Epic 3:</code></td>
+<td>As a user, I want to save my favourites, so that I can view them quickly when I return to the app</td>
+</tr>
+<tr>
+<td><code>Epic 4:</code></td>
+<td>As a user, I want a simple sidebar, so that I can navigate between Flickr, searches and favourites</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ux-and-ui">UX and UI</h3>
+<p>These epics can be further broken down into the following <em>user stories</em> by creating <em>wireframes</em> for the <em>UX (User Experience)</em></p>
+<!-- ![UX](https://mitni455.github.io/isentia-client-angular/images/ux.png)  -->
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ux.png" alt="UX" class="img-responsive"></p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Parent ID</th>
+<th>UI Epic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Epic 1:</code></td>
+<td>As a user, I want a Flickr list page</td>
+</tr>
+<tr>
+<td><code>Epic 1:</code></td>
+<td>As a user, I want a Flickr details page</td>
+</tr>
+<tr>
+<td><code>Epic 2:</code></td>
+<td>As a user, I want a search page</td>
+</tr>
+<tr>
+<td><code>Epic 3:</code></td>
+<td>As a user, I want a favourites page</td>
+</tr>
+</tbody>
+</table>
+<h6 id="bdd-e2e-tests">BDD - e2e Tests</h6>
+<p>Following <em>BDD</em> we already have enough for some <em>e2e tests</em> using protractor: </p>
+<p><code>As a user, I want a Flickr list page</code>  </p>
+<div><pre class="line-numbers"><code class="language-none">* Go to the home page at &#39;/&#39;
+* Expect to see &#39;Flickr Angular App&#39;
+* Expect the &#39;All Photos&#39; sidebar to be active </code></pre></div><p><code>As a user, I want a Flickr details page</code> </p>
+<div><pre class="line-numbers"><code class="language-none">* Go to the details page at /flickr/{mockImageId}
+* Expect to see the title &#39;Mock Title&#39;
+* Expect to see the image 
+* Expect to see the the authour &#39;Mock Authour&#39;
+* Expect to see the image description &#39;Mock Description&#39; </code></pre></div><p><code>As a user, I want a search page</code> </p>
+<div><pre class="line-numbers"><code class="language-none">* Go to the search page at &#39;/flickr/search&#39;
+* Enter the search term &#39;mock term&#39; to a list of mock images
+* Expect the &#39;Search&#39; sidebar to be active </code></pre></div><p><code>As a user, I want a simple sidebar</code> </p>
+<div><pre class="line-numbers"><code class="language-none">* Expect to see a sidebar with the &#39;All Images&#39;
+* Expect to see a sidebar with the &#39;Search&#39;
+* Expect to see a sidebar with the anchor &#39;Favourites&#39; </code></pre></div><h3 id="user-stories">User Stories</h3>
+<p>A <code>User Story</code> as issues </p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Boilerplate User Story</th>
+<th>Boiler Plate Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Components</code></td>
+<td>*DI <br> *Elements on Dom <br> * HTML for Mock Model <br> *Inputs() <br> *Outputs() <br> *Events triggered <br> *Events received <br> *Test for state: loading, success, warning, error <br> *Test lifecycle hooks <br> * BackstopJs CSS tests for responsive</td>
+</tr>
+<tr>
+<td><code>Models</code></td>
+<td>* DI <br>  *Key /values set <br> * JSON Schema validation</td>
+</tr>
+<tr>
+<td><code>Services</code></td>
+<td>* DI <br> * Observable subscribe <br> * Get set <br> * Integration test for API</td>
+</tr>
+<tr>
+<td>&lt;!-- </td>
+<td></td>
+</tr>
+<tr>
+<td>#</td>
+<td><code></code></td>
+</tr>
+<tr>
+<td>#</td>
+<td><code></code></td>
+</tr>
+<tr>
+<td>#</td>
+<td><code></code></td>
+</tr>
+<tr>
+<td> --&gt;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="components">Components</h1>
+<p><code>As a user, I want a Flickr list page</code>  </p>
+<ul>
+<li>Flickr List component</li>
+<li>Flickr Tile component</li>
+</ul>
+<h6 id="bdd-tdd-flickr-list-component">BDD/TDD - Flickr List component</h6>
+<div><pre class="line-numbers"><code class="language-none">* should create the page
+* should show tiles for mock FlickrImages models 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop</code></pre></div><h6 id="bdd-tdd-flickr-tile-component">BDD/TDD - Flickr Tile component</h6>
+<div><pre class="line-numbers"><code class="language-none">* should be created 
+* should show loading gif 
+* should show mock image 
+* should show mock title 
+* should hide the authour by deafult  
+* should show authour on hover 
+* should open the flickr details page on click 
+* should have favourite button 
+* favourite button should be off by default 
+* favourite button should be on when Flickr Image model is saved 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop</code></pre></div><p><code>As a user, I want a Flickr details page</code> </p>
+<ul>
+<li>Flickr details component</li>
+</ul>
+<h6 id="bdd-tdd-flickr-details-component">BDD/TDD - Flickr details component</h6>
+<div><pre class="line-numbers"><code class="language-none">* should be created 
+* should show Image 
+* should show title 
+* should show authour 
+* should show description 
+* should show back button 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop</code></pre></div><p><code>As a user, I want a search page</code> </p>
+<h6 id="bdd-tdd-search-page">BDD/TDD - Search Page</h6>
+<div><pre class="line-numbers"><code class="language-none">* should be created 
+* should have search bar 
+* should have no search tiles by default 
+* should show loading 
+* should show mock tiles for search term &quot;mock&quot; 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop</code></pre></div><p><code>As a user, I want a simple sidebar</code> </p>
+<h6 id="bdd-tdd-unit-tests">BDD/TDD - Unit Tests</h6>
+<div><pre class="line-numbers"><code class="language-none">* should be created 
+* should have menu item for All Images
+* should have menu item for Favourites
+* should have menu item for Search 
+
+* Visual tests - should look good on mobile portrait 
+* Visual tests - should look good on mobile landscape
+* Visual tests - should look good on tablet portrait 
+* Visual tests - should look good on tablet landscape
+* Visual tests - should look good on laptop
+* Visual tests - should look good on desktop</code></pre></div><h1 id="code-docs">Code Docs</h1>
+<p>See the published <a href="https://mitni455.github.io/isentia-client-angular/overview.html">code docs here</a></p>
+<hr>
+<h1 id="angular-development">Angular Development</h1>
 <h2 id="development-server">Development server</h2>
 <p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
 <h2 id="code-scaffolding">Code scaffolding</h2>

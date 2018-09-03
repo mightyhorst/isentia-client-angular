@@ -102,7 +102,9 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-  production: true
+  	production: true,
+  	apiUrl: &#x27;https://l70217a84b.execute-api.ap-southeast-2.amazonaws.com/production/&#x27;,
+  	searchTimeout: 3000
 }</code>
                         </td>
                     </tr>
@@ -141,7 +143,10 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-  production: false
+	production: false,
+	apiUrl: &#x27;https://l70217a84b.execute-api.ap-southeast-2.amazonaws.com/staging/&#x27;,
+	searchTimeout: 300,
+	storageStrategy: &#x27;cache&#x27;
 }</code>
                         </td>
                     </tr>
