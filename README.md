@@ -14,7 +14,7 @@ Save your favourites to a pin board
 
 ##### Details Page 
 This is far from finished, it should show the authour details too
-![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_details.png)
+![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_details2.png)
 
 ##### Public Flikr Feed Page 
 Browse the public feed for inspiration
