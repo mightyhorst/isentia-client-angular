@@ -6,19 +6,19 @@
 # Screenshots
 ##### Search Page 
 Search by Tag 
-[Search Page Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot1.png)
+![Search Page Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot1.png)
 
 ##### Favourites Page 
 Save your favourites to a pin board
-[Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot2.png)
+![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot2.png)
 
 ##### Details Page 
 This is far from finished, it should show the authour details too
-[Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot4.png)
+![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot4.png)
 
 ##### Public Flikr Feed Page 
 Browse the public feed for inspiration
-[Public Flikr Feed Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot3.png)
+![Public Flikr Feed Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot3.png)
 
 # Quick Start 
 Install and run 
