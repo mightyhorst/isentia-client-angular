@@ -6,15 +6,15 @@
 # Screenshots
 ##### Search Page 
 Search by Tag 
-![Search Page Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot1.png)
+![Search Page Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_tags.png)
 
 ##### Favourites Page 
 Save your favourites to a pin board
-![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot_favs.png)
+![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_favs.png)
 
 ##### Details Page 
 This is far from finished, it should show the authour details too
-![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot4.png)
+![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_details.png)
 
 ##### Public Flikr Feed Page 
 Browse the public feed for inspiration
