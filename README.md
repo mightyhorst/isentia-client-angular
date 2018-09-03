@@ -10,7 +10,7 @@ Search by Tag
 
 ##### Favourites Page 
 Save your favourites to a pin board
-![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot2.png)
+![Favourites Screenshot](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/screenshot_favs.png)
 
 ##### Details Page 
 This is far from finished, it should show the authour details too
