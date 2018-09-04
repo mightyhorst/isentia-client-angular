@@ -1,0 +1,63 @@
+/**
+* @todo refactor layout rather than used fixed positioning 
+**/ 
+.tiles {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-top: calc(75px + 100px);
+}
+	
+	/**
+	* @todo refactor layout rather than used fixed positioning 
+	**/ 
+	div.search-box{
+		display: flex;
+	    border-bottom: 1px solid rgba(0,0,0,.1);
+	    background: rgb(250, 250, 250, .95);
+	    width: calc(100% - 260px);
+	    height: 100px;
+	    line-height: 100px;
+	    text-align: center;
+	    justify-content: center;
+	    align-items: center;
+	    position: fixed;
+	    top: 77px;
+	    left: 260px;
+	    z-index: 2;
+	}
+		div.search-box i{
+			display: inline-block;
+		    font-size: 1.2em;
+		    width: 7%;
+		    color: rgba(0,0,0,.4);
+		}
+		div.search-box input.txtSearch{
+			width: 85%;
+			height: 50px;
+			text-indent: 20px;
+			font-size: 1.4em;
+			font-family: raleway, helvetica neue, helvetica, arial;
+			border-radius: 25px;
+			background: white;
+			border: 1px solid;
+			border-color: rgba(0,0,0,.1);
+			outline: none;
+		}
+			div.search-box input.txtSearch:focus, 
+			div.search-box input.txtSearch:active{
+				border-color: #0088ff;
+			}
+
+	flickr-tile {
+	    box-sizing: border-box;
+	    position: relative;
+	    display: inline-block;
+	    width: 200px;
+	    height: 200px;
+	    margin: 25px;
+	}

@@ -1,0 +1,147 @@
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
+
+/**
+*
+* Core 
+*
+**/
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule }    from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
+
+/**
+*
+* Routes
+*
+**/
+import { AppRoutingModule }     from '../../../app-routing.module';
+
+
+/**
+*
+* Components
+* 
+**/
+const appDir            = '../../../../app/';
+const layoutDir         = appDir + 'layout/';
+const componentsDir     = appDir + 'components/';
+const containerDir      = componentsDir + 'container/';
+const sidebarDir        = componentsDir + 'sidebar/';
+const flickrDetailsDir  = containerDir + 'flickr-details/';
+const flickrFavsDir     = containerDir + 'flickr-favourites/';
+const flickrListDir     = containerDir + 'flickr-list/';
+const flickrSearchDir   = containerDir + 'flickr-search/';
+
+
+import { AppComponent } from '../../../components/app.component';
+import { LayoutHeaderComponent } from '../../../layout/layout-header/layout-header.component';
+import { SidebarComponent } from '../../../components/sidebar/sidebar.component';
+import { SidebarItemComponent } from '../../../components/sidebar/sidebar-item/sidebar-item.component';
+import { ContainerComponent } from '../../../components/container/container.component';
+import { FlickrListComponent } from '../flickr-list/flickr-list.component';
+import { FlickrTileComponent } from '../flickr-list/flickr-tile/flickr-tile.component';
+import { FlickrDetailsComponent } from './flickr-details.component';
+import { FlickrSearchComponent } from '../flickr-search/flickr-search.component';
+import { FlickrFavouritesComponent } from '../flickr-favourites/flickr-favourites.component';
+// import { AuthComponent } from './auth/auth.component';
+// import { LoginComponent } from './auth/login/login.component';
+// import { RegisterComponent } from './auth/register/register.component';
+// import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+// import { ConfirmEmailComponent } from './auth/confirm-email/confirm-email.component';
+// import { ProfileComponent } from './auth/profile/profile.component';
+
+
+
+/**
+*
+* Models
+* 
+**/
+import { FlickrPhoto } from '../../../models/FlickrPhotoModel';
+
+/**
+*
+* Services
+*
+**/
+import { FlickrApiService } from '../../../services/flickr-api/flickr-api.service';
+
+
+/**
+*
+* Factories
+*
+**/
+import { FavouritesFactory } from '../../../models/factories/FavouritesFactory';
+import { PhotoCache } from '../../../models/factories/PhotoCache';
+
+
+
+describe('FlickrDetailsComponent', () => {
+
+    let component: FlickrDetailsComponent;
+    let fixture: ComponentFixture<FlickrDetailsComponent>;
+
+    var photoCache = TestBed.get(PhotoCache);
+
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ 
+                AppComponent,
+                LayoutHeaderComponent,
+                SidebarComponent,
+                SidebarItemComponent,
+                ContainerComponent,
+                FlickrListComponent,
+                FlickrTileComponent,
+                FlickrDetailsComponent,
+                FlickrSearchComponent,
+                FlickrFavouritesComponent
+            ],
+            imports: [
+                BrowserModule,
+                FormsModule, 
+                AppRoutingModule,
+                HttpClientModule
+            ],
+            providers: [
+                {provide: APP_BASE_HREF, useValue : '/' },
+                FavouritesFactory, 
+                PhotoCache,
+                FlickrApiService
+            ]
+        })
+        .compileComponents();
+    }));
+
+    beforeEach(() => {
+        fixture = TestBed.createComponent(FlickrDetailsComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+
+
+        var model = new FlickrPhoto();
+            model.title = 'title';
+            model.link = 'link';
+            model.media = ' media';
+            model.date_taken = 'date_taken';
+            model.description = 'description';
+            model.published = 'published';
+            model.author = 'author';
+            model.author_id = 'author_id';
+            model.tags = 'tags';
+            model.photo_id = 'photo_id';
+            model.isFavourite = true;
+        photoCache.save(model);
+    });
+
+    it('should create', () => {
+
+        
+
+        expect(component).toBeTruthy();
+    });
+});
+

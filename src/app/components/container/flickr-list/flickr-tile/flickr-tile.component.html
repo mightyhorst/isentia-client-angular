@@ -1,0 +1,29 @@
+<div class="tile">
+
+	<div class="tile-inner" [class.isFavourite]="photo.isFavourite">
+
+		<a class="gradient" 
+			routerLink="/photo/{{photo.photo_id}}"
+			>
+			
+			<img [src]="photo.media">
+
+		</a><!--/.gradient-->
+
+		<div class="details">
+			<h3>
+				{{photo.title}}
+			</h3>
+			<p>
+				<span> by {{photo.authourName()}} </span>
+				<button 
+					(click)="toggleFavourite()"
+					[class.isFavourite]="photo.isFavourite">
+					<i class="icon-heart"></i>
+				</button>
+			</p>
+		</div>
+
+	</div><!-- /.tile-inner -->
+
+</div><!-- /.tileview -->

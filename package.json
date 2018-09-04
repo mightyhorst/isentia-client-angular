@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node bin/www",
+    "start": "nodemon bin/www",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -27,6 +27,7 @@
     "http-errors": "^1.7.0",
     "morgan": "^1.9.0",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.3.1",
     "serve-favicon": "^2.5.0",
     "zone.js": "~0.8.26"
   },

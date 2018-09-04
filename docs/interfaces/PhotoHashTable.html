@@ -127,7 +127,7 @@ export interface PhotoHashTable {
 @Injectable()
 export class FavouritesFactory{
 	
-	photos?: PhotoHashTable;// &#x3D; [];
+	photos: FlickrPhoto[] &#x3D; [];
 
 	constructor(private flickrApi: FlickrApiService){
 		
@@ -142,7 +142,7 @@ export class FavouritesFactory{
 	* @todo Cache locally and save to API 
 	**/
 	save(photo: FlickrPhoto){
-		this.photos[photo.photo_id] &#x3D; photo;
+		this.photos.push(photo);
 
 		// this.flickrApi.saveFavourite(photo)
 		
@@ -156,7 +156,10 @@ export class FavouritesFactory{
 	**/
 	remove(photo: FlickrPhoto){
 		
-		delete this.photos[photo.photo_id];
+		let removeIndex &#x3D; this.photos.map(photoItem &#x3D;&gt; {
+			return photoItem.photo_id;
+		}).indexOf(photo.photo_id);
+		this.photos &#x3D; this.photos.splice(removeIndex);
 
 		// this.flickrApi.destroyFavourite(photo)
 		
@@ -168,7 +171,7 @@ export class FavouritesFactory{
 	* and refresh from API  
 	* @todo local cache and API integration 
 	**/
-	getAll(): PhotoHashTable{
+	getAll(): FlickrPhoto[]{
 		return this.photos;
 	}
 

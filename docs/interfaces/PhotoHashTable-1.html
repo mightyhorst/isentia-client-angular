@@ -129,7 +129,8 @@ export interface PhotoHashTable {
 @Injectable()
 export class PhotoCache{
 	
-	private photos?: PhotoHashTable; // &#x3D; [];
+	// private photos?: PhotoHashTable &#x3D; [];
+	private photos: FlickrPhoto[] &#x3D; [];
 
 	constructor(private flickrApi: FlickrApiService){
 		
@@ -155,7 +156,8 @@ export class PhotoCache{
 	* @todo Cache locally and save to API 
 	**/
 	save(photo: FlickrPhoto){
-		this.photos[photo.photo_id] &#x3D; photo;
+		// this.photos[photo.photo_id] &#x3D; photo;
+		this.photos.push(photo);
 
 		// this.flickrApi.saveFavourite(photo)
 		
@@ -169,7 +171,10 @@ export class PhotoCache{
 	**/
 	remove(photo: FlickrPhoto){
 		
-		delete this.photos[photo.photo_id];
+		let removeIndex &#x3D; this.photos.map(photoItem &#x3D;&gt; {
+			return photoItem.photo_id;
+		}).indexOf(photo.photo_id);
+		this.photos &#x3D; this.photos.splice(removeIndex);
 
 		// this.flickrApi.destroyFavourite(photo)
 		
@@ -182,7 +187,7 @@ export class PhotoCache{
 	* and refresh from API  
 	* @todo local cache and API integration 
 	**/
-	getAll(): PhotoHashTable{
+	getAll(): FlickrPhoto[]{
 		return this.photos;
 	}
 
@@ -194,7 +199,7 @@ export class PhotoCache{
 	* return FlickrPhoto for the given ID
 	**/
 	getById(id): FlickrPhoto{
-		return this.photos[id];
+		return this.photos.find(photo &#x3D;&gt;  photo.photo_id &#x3D;&#x3D; id);
 	}
 
 }</code></pre>

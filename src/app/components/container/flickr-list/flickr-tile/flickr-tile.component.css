@@ -1,0 +1,158 @@
+/**
+*
+* Tiles 
+*
+* @TODO remove tile-inner class, it's redundant
+*
+*
+**/
+
+/* div.tile {
+	box-sizing:border-box;
+	position: relative;
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	margin: 25px;
+}*/ 
+
+	div.tile .tile-inner{
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		right: 15px;
+		bottom: 15px;
+		background-color: #fff;
+		border-radius: 4px;
+		transition: all .5s;
+		overflow: hidden;
+		border: 1px solid transparent;
+	}
+		div.tile .tile-inner:hover
+		{
+			box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+			border: 1px solid rgba(0, 0, 0, .1);
+			transform: scale(1.1);
+		}
+		div.tile .tile-inner.isFavourite{
+			border: 1px solid rgba(0, 0, 0, .1);
+		}
+
+	/**
+	* Tile gradient
+	* by default it has a black gradient 
+	* this will be overriden by the photo model picture 
+	**/ 
+	div.tile .gradient{
+		background: linear-gradient(120deg, rgb(50, 57, 63) 0%, rgb(55, 62, 69) 100%) rgb(50, 57, 63);
+	}
+	div.tile .gradient{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		height: auto;
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin: 55px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+	}
+		div.tile .gradient img{
+			height: 100%;
+		}
+
+	div.tile .details{
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: #ccc;
+		-webkit-appearance: none;
+	}
+
+	div.tile .details h3{
+		display: inline-block;
+		position: absolute;
+		top: 20px;
+		left: 0px;
+		font-weight: 400;
+		margin: 0;
+		width: 100%;
+		text-align: center;
+		font-family: helvetica neue;
+		color: #4c4c4c;
+		-webkit-font-smoothing: antialiased;
+		font-size: 13px;
+		max-height: 2em;
+		overflow: scroll;
+	}
+
+	.tile-inner .details p{
+		display: inline-block;
+		position: absolute;
+		bottom: 0px;
+		height: 40px;
+		line-height: 40px;
+		overflow: hidden;
+		font-weight: 400;
+		font-size: .8em;
+		margin: 0;
+		width: calc(100%);	
+		padding-left: 20px;
+		text-indent: 5px;
+		border-top: 1px dotted rgba(0, 0, 0, .1);
+		box-sizing: border-box;
+		background: rgba(0, 0, 0, 0.01);
+		opacity: 0;
+		transition: .5s all;
+	}
+	.tile-inner:hover .details p,
+	.tile-inner.isFavourite .details p
+	{
+		color: #4c4c57;
+		transform: translateY(0px);
+		opacity: .7;
+	}
+
+	div.tile .details p span{
+	    width: 72%;
+	    overflow: hidden;
+	    display: inline-block;
+	    white-space: nowrap;
+	    height: 100%;
+	}
+
+	div.tile .details p button{
+		float: right;
+		display: block;
+		width: 40px;
+		height: 40px;
+		font-size: 1.4em;
+		border: 0px;
+		background: transparent;
+		border-left: 1px solid rgba(0,0,0,.03);
+		outline: none !important;
+		cursor: pointer;
+		color: rgba(0,0,0,.5);
+	}
+	div.tile .details p button:hover{
+		color: rgba(180,0,0,1);
+	}
+	div.tile .details p button.isFavourite{
+		color: rgba(255,0,0,1);
+	}
+
+	
+

@@ -1,0 +1,47 @@
+header {
+    display: block;
+    height: 77px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    box-sizing: border-box;
+    padding: 0 86px;
+    width: 100%;
+    position: fixed;
+    background: rgb(253, 253, 253);
+    top: 0px;
+    z-index: 2;
+}
+header h1{
+	
+}
+
+header img{
+	height: 50px;
+    position: absolute;
+    left: 2%;
+    top: 10px;
+}
+
+header sup{
+	display: block;
+    color: #607D8B;
+    text-transform: uppercase;
+    font-size: 7px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    position: relative;
+    top: 5px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+header sup  i{
+	color: rgba(0,0,0,.5);
+	font-size: 7px;
+	margin-top: -1px;
+}
+header sup  a {
+    color: inherit;
+    font-weight: 500;
+    font-size: 8px;
+    display: inline-block;
+    padding: 0px;
+    padding: 0 7px;
+}

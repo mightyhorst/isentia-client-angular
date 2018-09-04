@@ -1,0 +1,114 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { TestBed, async } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
+
+/**
+*
+* Core 
+*
+**/
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule }    from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
+
+/**
+*
+* Routes
+*
+**/
+import { AppRoutingModule }     from '../../../app-routing.module';
+
+
+/**
+*
+* Components
+* 
+**/
+import { AppComponent } from '../../../components/app.component';
+import { LayoutHeaderComponent } from '../../../layout/layout-header/layout-header.component';
+import { SidebarComponent } from '../../../components/sidebar/sidebar.component';
+import { SidebarItemComponent } from '../../../components/sidebar/sidebar-item/sidebar-item.component';
+import { ContainerComponent } from '../../../components/container/container.component';
+import { FlickrListComponent } from '../../../components/flickr-list/flickr-list.component';
+import { FlickrTileComponent } from '../../../components/flickr-list/flickr-tile/flickr-tile.component';
+import { FlickrDetailsComponent } from '../../../components/flickr-details/flickr-details.component';
+import { FlickrSearchComponent } from '../../../components/flickr-search/flickr-search.component';
+import { FlickrFavouritesComponent } from '../../../components/flickr-favourites/flickr-favourites.component';
+
+
+
+
+/**
+*
+* Models
+* 
+**/
+import { FlickrPhoto } from '../../../models/FlickrPhotoModel';
+import { SidebarItem } from '../../../models/SidebarItemModel';
+
+/**
+*
+* Services
+*
+**/
+import { FlickrApiService } from '../../../services/flickr-api/flickr-api.service';
+
+
+/**
+*
+* Factories
+*
+**/
+import { FavouritesFactory } from '../../../models/factories/FavouritesFactory';
+import { PhotoCache } from '../../../models/factories/PhotoCache';
+
+
+
+import { SidebarItemComponent } from './sidebar-item.component';
+
+describe('SidebarItemComponent', () => {
+    let component: SidebarItemComponent;
+    let fixture: ComponentFixture<SidebarItemComponent>;
+
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ 
+                AppComponent,
+                LayoutHeaderComponent,
+                SidebarComponent,
+                SidebarItemComponent,
+                ContainerComponent,
+                FlickrListComponent,
+                FlickrTileComponent,
+                FlickrDetailsComponent,
+                FlickrSearchComponent,
+                FlickrFavouritesComponent
+            ],
+            imports: [
+                BrowserModule,
+                FormsModule, 
+                AppRoutingModule,
+                HttpClientModule
+            ],
+            providers: [
+                {provide: APP_BASE_HREF, useValue : '/' },
+                FavouritesFactory, 
+                PhotoCache,
+                FlickrApiService
+            ]
+        })
+        .compileComponents();
+    }));     
+
+    beforeEach(() => {
+        fixture = TestBed.createComponent(SidebarItemComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+});

@@ -1,0 +1,26 @@
+{
+  "name": "isentia-client-angular",
+  "homepage": "https://github.com/mitni455/isentia-client-angular",
+  "authors": [
+    "Nick Mitchell <nick@kitset.io>"
+  ],
+  "description": "Flickr angular sample app",
+  "main": "",
+  "keywords": [
+    "isentia",
+    "angular"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fontawesome": "^5.3.1",
+    "simple-line-icons": "^2.4.1"
+  }
+}

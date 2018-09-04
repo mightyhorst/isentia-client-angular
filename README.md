@@ -34,7 +34,9 @@ or with docker:
 * `docker build -t isentia-flickr-app .`
 * `docker run -d -p 8080:8080 --name isentia-flickr-app isentia-flickr-app`
 
-Please raise a `pull request` for any developments, and use the `issues` for bugs and feature requests. Be sure to run `compodoc` to generate docs.
+Please raise a `pull request` for any developments, and use the `issues` for bugs and feature requests. 
+
+Be sure to run `compodoc -p src/tsconfig.app.json -d docs/` to generate docs.
 
 
 # Architecture 

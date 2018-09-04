@@ -510,11 +510,11 @@ export class FlickrFavouritesComponent implements OnInit {
 
 	ngOnInit() {
 
-		var photoTable:PhotoHashTable &#x3D; this.favouritesFactory.getAll();
+		this.photos &#x3D; this.favouritesFactory.getAll();
 		
-		for (var id in photoTable) {
+		/*for (var id in photoTable) {
 			this.photos.push(photoTable[id]);
-		}
+		}*/
 
 	}
 

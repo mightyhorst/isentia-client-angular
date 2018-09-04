@@ -1,0 +1,74 @@
+/**
+|
+| ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|
+| I still use proper css as cacading styles rather 
+| than relying on Angular css injection
+|
+| ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|
+**/
+.sidebar-item {
+	display: block;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	border-top: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid rgba(255,255,255,.03);
+} 
+
+.sidebar-item:first-of-type{
+	border-top: 0px;
+}
+
+	.sidebar-item > span,
+	.sidebar-item > a{
+		border-radius: 40px;
+		width: 100%;
+		margin: auto;
+		display: block;
+		position: relative;
+		height: 100%;
+		color: white;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.sidebar-item > span > img,
+	.sidebar-item > a > img{
+		width: 30px;
+	    display: inline-block;
+	    left: 17px;
+        position: absolute;
+        top: 32px;
+	}
+
+	.sidebar-item > span > label,
+	.sidebar-item > a > label{
+		display: inline-block;
+	    width: 53%;
+	    border-right: 1px dotted rgba(0,0,0,.05);
+	    height: 100%;
+	    margin: 0px;
+	    font-weight: 400;
+	    position: absolute;
+	    left: 28%;
+	    text-align: left;
+	    font-size: 1.2em;
+	}
+
+	.sidebar-item > span > .actions,
+	.sidebar-item > a > .actions{
+		display: inline-block;
+	    position: absolute;
+	    right: 0px;
+	    width: 15%;
+	    height: 100%;
+	    font-size: 8px;
+	    background: rgba(0,0,0,.05);
+	}
+
+	.sidebar-item > span > .actions i,
+	.sidebar-item > a > .actions i{
+
+	}

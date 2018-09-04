@@ -8,8 +8,10 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
+RUN npm i -g nodemon
 RUN npm i npm@latest -g
 RUN npm install
+# RUN cd src/assets && bower install
 # If you are building your code for production
 # RUN npm install --only=production
 

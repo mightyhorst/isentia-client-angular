@@ -63,7 +63,13 @@
 <li><code>ng e2e</code></li>
 <li>Serve locally: <code>ng serve</code></li>
 </ol>
-<p>Please raise a <code>pull request</code> for any developments, and use the <code>issues</code> for bugs and feature requests. Be sure to run <code>compodoc</code> to generate docs.</p>
+<p>or with docker:</p>
+<ul>
+<li><code>docker build -t isentia-flickr-app .</code></li>
+<li><code>docker run -d -p 8080:8080 --name isentia-flickr-app isentia-flickr-app</code></li>
+</ul>
+<p>Please raise a <code>pull request</code> for any developments, and use the <code>issues</code> for bugs and feature requests. </p>
+<p>Be sure to run <code>compodoc -p src/tsconfig.app.json -d docs/</code> to generate docs.</p>
 <h1 id="architecture">Architecture</h1>
 <!-- ![Architecture](https://mitni455.github.io/isentia-client-angular/images/architecture.png) -->
 <p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/architecture.png" alt="Architecture" class="img-responsive"></p>
@@ -133,8 +139,16 @@
 <td>Continuous Integration and Deployment</td>
 </tr>
 <tr>
+<td><code>DockerHub</code></td>
+<td>Docker hub is used to deploy Docker images to ElasticBeanstalk</td>
+</tr>
+<tr>
+<td><code>SwaggerHub</code></td>
+<td>SwaggerHub is used to host the API documentation <a href="https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0">here</a></td>
+</tr>
+<tr>
 <td><code>CompoDoc</code></td>
-<td>Documentation</td>
+<td>Angular Documentation tool</td>
 </tr>
 <tr>
 <td><code>Agile</code></td>
@@ -161,7 +175,8 @@
 <h1 id="ci-cd">CI/CD</h1>
 <!-- ![cicd](https://mitni455.github.io/isentia-client-angular/images/ci_cd.png) -->
 <!-- ![cicd](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd.png) -->
-<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_angular.png" alt="ci/cd client" class="img-responsive"></p>
+<!-- ![ci/cd client](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_angular.png) -->
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_client.png" alt="ci/cd client" class="img-responsive"></p>
 <p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_backend.png" alt="ci/cd backend" class="img-responsive"></p>
 <p>Also pictured is the backend architecture, available at this <a href="https://github.com/mitni455/isentia_microservice_flickr">repo</a> </p>
 <h3 id="environments">Environments</h3>
@@ -189,6 +204,16 @@
 </table>
 <h3 id="pipeline">Pipeline</h3>
 <p><em>TravisCi</em> is used as our Continuous Integration service. </p>
+<h1 id="tests-backend">Tests - Backend</h1>
+<p>The api documentation is available on <a href="https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0">SwaggerHub here</a></p>
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_swagger.png" alt="swagger" class="img-responsive">
+available here: <a href="https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0">https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0</a></p>
+<h5 id="bdd-backend">BDD - Backend</h5>
+<p>The integration tests are written in <code>mocha</code> available from the backend repo. </p>
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/mocha.png" alt="mocha tests" class="img-responsive"></p>
+<h1 id="tests-frontend">Tests - Frontend</h1>
+<p>The front end tests are split into <code>e2e tests</code>, <code>unit tests</code> and <code>integration tests</code> using angular cli tool, jasmine and karma. </p>
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/karma.png" alt="jasmine tests" class="img-responsive"> </p>
 <h1 id="development-lifecycle">Development Lifecycle</h1>
 <p>Depending on the client tradeoffs between time, cost and quality I would follow the following development lifecycle including agile approach, extreme programming and BDD. </p>
 <!-- ![Architecture](https://mitni455.github.io/isentia-client-angular/images/dev-lifecycle.png) -->

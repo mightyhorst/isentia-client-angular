@@ -1,0 +1,11 @@
+<div class="sidebar-item">
+	<a [routerLink]="sidebarItem.path">
+		<img [src]="sidebarItem.imgSrc">
+		<label>
+			{{sidebarItem.title}}
+		</label>
+		<div class="actions">
+			<i class="{{sidebarItem.icon}}"></i>
+		</div>
+	</a>
+</div>

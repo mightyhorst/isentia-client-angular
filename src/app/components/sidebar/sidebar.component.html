@@ -1,0 +1,19 @@
+<nav class="sidebar">
+	<a class="logo" href="/">
+		<img src="/assets/img/flickr-v2.png">
+		<h1>
+			Flickr App 
+		</h1>
+	</a>
+	<div class="slideout-sidebar">
+		<div class="current-menu">
+
+		<app-sidebar-item 
+			*ngFor="let sidebarItem of sidebarItems"
+			[sidebarItem]="sidebarItem"
+			[class.selected]="sidebarItem.isSelected">
+		</app-sidebar-item>
+		
+		</div><!-- div.currentmenu -->
+	</div><!-- div.slideoutsidebarview -->
+</nav>

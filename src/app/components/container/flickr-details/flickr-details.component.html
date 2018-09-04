@@ -1,0 +1,16 @@
+<layout-header
+	[title]="layout.title"
+	[imgSrc]="layout.imgSrc"
+	[crumbs]="layout.crumbs"></layout-header> 
+
+<section class="tiles">
+	
+	<div class="is-loading" *ngIf="isLoading"> 
+		<h3>
+			loading ... 
+		</h3>
+	</div>
+	<flickr-tile
+		[photo]="photo"></flickr-tile>
+
+</section>

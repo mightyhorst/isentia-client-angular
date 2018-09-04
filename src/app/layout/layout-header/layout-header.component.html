@@ -1,0 +1,15 @@
+<header>
+	<img [src]="imgSrc">
+	<sup>
+		<span
+			*ngFor="let crumb of crumbs;">
+			<a [routerLink]="crumb.path">
+				{{crumb.title}}
+			</a>
+			<i class="fa fa-chevron-right"></i>
+		</span>
+	</sup>
+	<h1>
+		{{title}}
+	</h1>
+</header>

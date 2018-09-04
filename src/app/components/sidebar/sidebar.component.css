@@ -1,0 +1,139 @@
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+| 
+|
+| Sidebar Component 
+| 
+| 
+|
+**/
+.sidebar {
+	display:block;
+	box-sizing:border-box;
+	position: fixed;
+	/*width: 260px;*/
+	top: 0px;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	font-family: 'helvetica neue';
+	font-size: 12px;
+	border: 1px solid rgba(0,0,0,.1);
+	
+	/*theme*/
+	background: #32393f;
+	color: white;
+	z-index: 9999;
+	transition: width .2s;
+} 
+
+	[data-theme="dark"] .slideout-sidebar{
+	    background: #32393f;
+	    color: white;
+	}
+
+	.slideout-sidebar {
+	    position: relative;
+	    height: calc(100% - 64px);
+	    top: 0px;
+	    display: block;
+	    z-index: 1;
+	    padding: 0px;
+	    margin: 0px;
+	    width: 100%;
+	    border-right: 1px solid rgba(0,0,0,.4);
+	    transition: left .2s;
+	}
+
+
+	/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	| 
+	|
+	| Logo
+	| 
+	| 
+	|
+	**/
+	a.logo{
+		display: flex;
+		height: 75px;
+		border-bottom: 1px solid rgba(255,255,255,.02);
+		text-align: center;
+		background: rgba(3, 75, 132, 0.35);
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		box-shadow: inset -1px -1px 3px rgba(0,0,0,.1);
+	}
+	a.logo > img{
+		display: block;
+	    height: 60px;
+	    width: 60px;
+	}
+	a.logo > h1{
+		height: 75px;
+	    float: left;
+	    display: block;
+	    line-height: 75px;
+	    color: rgba(255,255,255,.8);
+	    font-size: 2.2em;
+	    display: none;
+	}
+
+
+	/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	| 
+	|
+	| Current Menu for a slider  
+	| 
+	| 
+	|
+	**/
+	.current-menu {
+	    transition: left .2s;
+	    position: absolute;
+	    display: block;
+	    width: 100%;
+	    height: 100%;
+	    z-index: 1;
+	    padding: 0px;
+	    margin: 0px;
+	    overflow-x: hidden;
+	    overflow-y: scroll;
+	    left: 0px;
+	    padding-bottom: 20px;
+		z-index: 10;
+	}
+		.current-menu:nth-of-type(1){
+			left: 0px; 
+		}
+		.current-menu:nth-of-type(2){
+			left: 249px; 
+			left: 0px;
+		}
+
+	/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	| 
+	|
+	| App Sidebar Item Component
+	| 
+	| 
+	|
+	**/
+	app-sidebar-item {
+		opacity: .2; /* @todo - opacity when not selected */
+		opacity: 1;
+		color: rgba(255,255,255,.2);
+		display: block;
+		cursor: pointer;
+	}
+	app-sidebar-item.selected, 
+	app-sidebar-item:hover 
+	{
+		opacity: 1;
+		color: rgba(255,255,255,1);
+		display: block;
+	}
+	app-sidebar-item.selected i.fa{
+		color: rgba(255,255,255,.1);
+	}
+	
