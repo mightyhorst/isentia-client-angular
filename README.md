@@ -30,6 +30,10 @@ Install and run
 * `ng e2e`
 4. Serve locally: `ng serve`
 
+or with docker:
+* `docker build -t isentia-flickr-app .`
+* `docker run -d -p 8080:8080 --name isentia-flickr-app isentia-flickr-app`
+
 Please raise a `pull request` for any developments, and use the `issues` for bugs and feature requests. Be sure to run `compodoc` to generate docs.
 
 
@@ -58,7 +62,9 @@ Also pictured is the backend architecture, available at this [repo](https://gith
 | Tools | Description |
 | -------- | ----------- |
 | `Travis CI` | Continuous Integration and Deployment |
-| `CompoDoc` | Documentation |
+| `DockerHub` | Docker hub is used to deploy Docker images to ElasticBeanstalk |
+| `SwaggerHub` | SwaggerHub is used to host the API documentation [here](https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0)|
+| `CompoDoc` | Angular Documentation tool |
 | `Agile` | Github Projects |
 | [`BackstopJS 3`](https://garris.github.io/BackstopJS/) | Visual regression testing for responsive CSS |
 | `Mocha` | Integration and API Testing (used for backend repo. I prefer it to Jasmine/Karma)   |
@@ -69,7 +75,8 @@ Also pictured is the backend architecture, available at this [repo](https://gith
 
 <!-- ![cicd](https://mitni455.github.io/isentia-client-angular/images/ci_cd.png) -->
 <!-- ![cicd](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd.png) -->
-![ci/cd client](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_angular.png)
+<!-- ![ci/cd client](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_angular.png) -->
+![ci/cd client](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_client.png)
 
 ![ci/cd backend](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ci_cd_backend.png)
 
@@ -88,6 +95,25 @@ Also pictured is the backend architecture, available at this [repo](https://gith
 
 ### Pipeline
 *TravisCi* is used as our Continuous Integration service. 
+
+
+# Tests - Backend
+The api documentation is available on [SwaggerHub here](https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0)
+
+![swagger](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_swagger.png)
+available here: [https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0](https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0)
+
+##### BDD - Backend 
+The integration tests are written in `mocha` available from the backend repo. 
+
+![mocha tests](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/mocha.png)
+
+
+# Tests - Frontend
+The front end tests are split into `e2e tests`, `unit tests` and `integration tests` using angular cli tool, jasmine and karma. 
+
+![jasmine tests](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/karma.png) 
+
 
 # Development Lifecycle
 Depending on the client tradeoffs between time, cost and quality I would follow the following development lifecycle including agile approach, extreme programming and BDD. 
