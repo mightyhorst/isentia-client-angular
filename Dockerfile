@@ -17,6 +17,7 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+RUN ./node_modules/.bin/ng build
 
 EXPOSE 8080
 CMD [ "npm", "start" ]
