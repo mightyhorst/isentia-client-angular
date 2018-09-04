@@ -1,7 +1,8 @@
 # Quick Links 
 * [Online Demo]()
-* [Code Docs](https://mitni455.github.io/isentia-client-angular/overview.html)
-* [Backend repo](https://github.com/mitni455/isentia_microservice_flickr)
+* [Client Documentation](https://mitni455.github.io/isentia-client-angular/overview.html)
+* [Backend Documentation](https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0)
+<!-- * [Backend Repo](https://github.com/mitni455/isentia_microservice_flickr) -->
 
 # Screenshots
 ##### Search Page 
