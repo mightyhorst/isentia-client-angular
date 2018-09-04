@@ -100,7 +100,7 @@ Also pictured is the backend architecture, available at this [repo](https://gith
 # Tests - Backend
 The api documentation is available on [SwaggerHub here](https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0)
 
-![swagger](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/ss_swagger.png)
+![swagger](https://s3-ap-southeast-2.amazonaws.com/isentia.flickr.angular.assets/images/swagger.png)
 available here: [https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0](https://app.swaggerhub.com/apis/kitset-io/isentia-flickr-api/1.0.0)
 
 ##### BDD - Backend 
