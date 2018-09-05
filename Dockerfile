@@ -8,16 +8,23 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm i -g nodemon
-RUN npm i npm@latest -g
-RUN npm install
-# RUN cd src/assets && bower install
-# If you are building your code for production
-# RUN npm install --only=production
+# Install bower and npm 
+RUN npm i -g bower npm@latest @angular/cli
+
+# Optional install nodemon for development 
+# RUN npm i -g nodemon 
 
 # Bundle app source
 COPY . .
-RUN ./node_modules/.bin/ng build
+
+# Install dependencies 
+RUN cd src/assets && bower install --allow-root
+RUN npm install 
+
+# Build the angular app for serving 
+# RUN ./node_modules/.bin/ng build --prod
+RUN ng build
+
 
 EXPOSE 8080
 CMD [ "npm", "start" ]

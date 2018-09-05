@@ -4,7 +4,13 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 
-var apiRouter = require('./routes/book');
+/**
+*
+* Alternative strategy is to serve the API from the Express App rather than use API Gateway + Lambda
+* This would be easier but would miss the opportunity to benefit from the security, scalability, performance and modularity of the full AWS suite
+*
+**/
+var apiRouter = require('./routes/photo');
 
 var app = express();
 
