@@ -9,7 +9,7 @@ import { FlickrFavouritesComponent } from './components/container/flickr-favouri
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'photo/search', 
+		redirectTo: 'photo', 
 		pathMatch: 'full'
 	},
 	{
