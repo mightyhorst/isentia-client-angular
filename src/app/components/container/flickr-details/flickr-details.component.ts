@@ -2,9 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { FlickrApiService } from '../../../services/flickr-api/flickr-api.service';
-import { PhotoCache } from '../../../models/factories/PhotoCache';
-import { FlickrPhoto } from '../../../models/FlickrPhotoModel';
+import { FlickrApiService } from '@services/flickr-api/flickr-api.service';
+import { PhotoCache } from '@models/factories/PhotoCache';
+import { FlickrPhoto } from '@models/FlickrPhotoModel';
 
 
 /**

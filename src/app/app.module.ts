@@ -10,6 +10,26 @@ import { HttpClientModule }    from '@angular/common/http';
 
 /**
 *
+* Config
+*
+**/
+import {environment} from '@env';
+import {ValidationError} from '@config/Errors';
+
+try{
+    throw new ValidationError("Validation error message");
+}
+catch(error){
+    if(error instanceof ValidationError){
+       console.log('Validation error: '+error.message);
+    }
+    else{
+        console.log('NOT a Validation error');
+    }
+}
+
+/**
+*
 * Routes
 *
 **/
@@ -20,22 +40,22 @@ import { AppRoutingModule }     from './app-routing.module';
 * Components
 * 
 **/
-import { AppComponent } from './components/app.component';
+import { AppComponent } from '@components/app.component';
 import { LayoutHeaderComponent } from './layout/layout-header/layout-header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { SidebarItemComponent } from './components/sidebar/sidebar-item/sidebar-item.component';
-import { ContainerComponent } from './components/container/container.component';
-import { FlickrListComponent } from './components/container/flickr-list/flickr-list.component';
-import { FlickrTileComponent } from './components/container/flickr-list/flickr-tile/flickr-tile.component';
-import { FlickrDetailsComponent } from './components/container/flickr-details/flickr-details.component';
-import { FlickrSearchComponent } from './components/container/flickr-search/flickr-search.component';
-import { FlickrFavouritesComponent } from './components/container/flickr-favourites/flickr-favourites.component';
-import { AuthComponent } from './components/auth/auth.component';
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
-import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
-import { ConfirmEmailComponent } from './components/auth/confirm-email/confirm-email.component';
-import { ProfileComponent } from './components/auth/profile/profile.component';
+import { SidebarComponent } from '@components/sidebar/sidebar.component';
+import { SidebarItemComponent } from '@components/sidebar/sidebar-item/sidebar-item.component';
+import { ContainerComponent } from '@components/container/container.component';
+import { FlickrListComponent } from '@components/container/flickr-list/flickr-list.component';
+import { FlickrTileComponent } from '@components/container/flickr-list/flickr-tile/flickr-tile.component';
+import { FlickrDetailsComponent } from '@components/container/flickr-details/flickr-details.component';
+import { FlickrSearchComponent } from '@components/container/flickr-search/flickr-search.component';
+import { FlickrFavouritesComponent } from '@components/container/flickr-favourites/flickr-favourites.component';
+import { AuthComponent } from '@components/auth/auth.component';
+import { LoginComponent } from '@components/auth/login/login.component';
+import { RegisterComponent } from '@components/auth/register/register.component';
+import { ForgotPasswordComponent } from '@components/auth/forgot-password/forgot-password.component';
+import { ConfirmEmailComponent } from '@components/auth/confirm-email/confirm-email.component';
+import { ProfileComponent } from '@components/auth/profile/profile.component';
 
 /**
 *

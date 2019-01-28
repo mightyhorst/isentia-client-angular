@@ -16,6 +16,15 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+        "@app/*": ["src/app/*"],
+        "@components/*": ["src/app/components/*"],
+        "@layout/*": ["src/app/layout/*"],
+        "@models/*": ["src/app/models/*"],
+        "@services/*": ["src/app/services/*"],
+        "@env": ["src/environments/environment.ts"],
+        "@config/*": ["src/app/config/*"],
+    }
   }
 }
